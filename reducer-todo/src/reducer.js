@@ -13,9 +13,16 @@ export const reducer = (state, action)=>{
                 completed: false
             }]};
         case("TOGGLE_COMPLETED"):
-            return(state);
+            return{...state, Todos: state.Todos.map(todo=>{
+                if(todo.id === action.payload){
+                    return{...todo, completed: !todo.completed}
+                }
+                else{
+                    return todo
+                }
+            })};
         case("CLEAR_COMPLETED"):
-            return(state);
+            return{...state, Todos: state.Todos.filter(todo=>{return todo.completed !== true})};
         default: return(state);
     }
 }

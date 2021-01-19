@@ -10,7 +10,8 @@ function TodoForm(props){
     }
     function handleSubmit(e){
         e.preventDefault();
-        dispatch(addTodo(form))
+        dispatch(addTodo(form));
+        setForm("")
     }
 
     return(

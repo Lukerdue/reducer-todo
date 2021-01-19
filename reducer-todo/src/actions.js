@@ -3,7 +3,7 @@ export const addTodo=(data)=>{
 }
 
 export const toggleTodo=(data)=>{
-    return {type: "TOGGLE_TODO", payload: data}
+    return {type: "TOGGLE_COMPLETED", payload: data}
 }
 
 export const clearCompleted=()=>{
